@@ -15,15 +15,10 @@ public class InfraController {
 	@RequestMapping("/tabelas")
 	public String criaBanco() throws SQLException {
 		Connection c = new ConnectionFactory().getConnection();
-		PreparedStatement st1 = c.prepareStatement("drop table contas if exists");
-		st1.execute();
-
-		PreparedStatement st11 = c.prepareStatement("create table contas (id int identity, descricao varchar(255), valor double, paga boolean, dataPagamento datetime, tipo varchar(20))");
+		
+		PreparedStatement st11 = c.prepareStatement("create table contas (id int primary key auto_increment, descricao varchar(255), valor double, paga boolean, dataPagamento datetime, tipo varchar(20))");
 		st11.execute();
 		
-		PreparedStatement st2 = c.prepareStatement("drop table usuarios if exists");
-		st2.execute();
-
 		PreparedStatement st22 = c.prepareStatement("create table usuarios (login VARCHAR(255),senha VARCHAR(255));");
 		st22.execute();
 

@@ -14,6 +14,21 @@
 	
 	<!-- Configuração que permite o uso de anotações na aplicação Spring -->
 	<mvc:annotation-driven /> 
+	
+	<!-- Define requisições para recursos locais do projeto como arquivos .js -->
+	<mvc:default-servlet-handler/>
+	
+	<!-- Registrando o interceptador de autorizador -->
+	<mvc:interceptors>
+		<bean class="br.com.caelum.contas.interceptor.AutorizadorInterceptor"/>
+	</mvc:interceptors>
+	
+	<bean id="mysqlDataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+		<property name="url" value="jdbc:mysql://localhost/conta"/>
+		<property name="username" value="master"/>
+		<property name="password" value="matos132739"/>
+	</bean>
 
 	<!-- Definição do local das paginas JSP -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

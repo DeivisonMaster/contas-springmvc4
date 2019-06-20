@@ -22,7 +22,7 @@ public class UsuarioDAO {
 	public boolean existeUsuario(Usuario usuario) {
 		
 		if(usuario == null) {
-			throw new IllegalArgumentException("Usu√°rio nao deve ser nulo");
+			throw new IllegalArgumentException("Usu·rio nao deve ser nulo");
 		}
 		
 		try {
@@ -43,7 +43,7 @@ public class UsuarioDAO {
 
 	public void insere(Usuario usuario) {
 		if(usuario == null) {
-			throw new IllegalArgumentException("Usu√°rio nao deve ser nulo");
+			throw new IllegalArgumentException("Usu·rio nao deve ser nulo");
 		}
 		
 		try {
